@@ -66,6 +66,9 @@ RUN apt-get remove -q -y python-six
 # python-pip just became collatoral damage.  reinstall it.
 RUN apt-get install -q -y python-pip
 
+# Pip forced upgrade
+RUN pip install -U pip
+
 # Install six from pip before getting from global-requirements (due to bugs...)
 RUN pip install six
 
